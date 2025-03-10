@@ -9,21 +9,3 @@ Ahmad has developed multiple projects across AI, web development, and cloud comp
 ✅ Object Detection & NLP: Learning YOLO, Faster R-CNN, and Detectron for object detection while refining NLP techniques like TF-IDF, Word2Vec, and tokenization.
 ✅ Microservices & APIs: Created Flask-based microservices, including a Contact Us form API with PostgreSQL on Neon.
 ✅ Cloud & DevOps: Strong grip on AWS EC2, Docker, Kubernetes, Terraform, Ansible, and CI/CD pipelines.
-
-Entrepreneurial Vision
-Ahmad envisions launching multiple tech startups, including:
-🚀 Skyliner: His flagship business, expected to launch next year, aiming to revolutionize technology-driven solutions.
-🚗 Skyride: A ride-sharing & food delivery platform, integrating Uber & Foodpanda-like services.
-💳 Financial Platform: A payment solution for seamless transactions, targeting Bangladesh, Sri Lanka, Nepal, and beyond.
-
-Freelancing & Career Goals
-Despite his extensive knowledge, Ahmad is actively seeking his first breakthrough in software development, freelancing, and Upwork/Fiverr clients. He is determined to build a strong portfolio and establish himself as a recognized AI/ML and DevOps professional.
-
-Interests Beyond Tech
-Beyond coding, Ahmad is passionate about politics, geopolitics, and history, engaging in deep discussions about global affairs and historical events.
-
-Future Goals & Learning Focus
-🔹 Master Django for full-stack web development
-🔹 Deploy professional applications using AWS & DevOps best practices
-🔹 Develop an AI chatbot using Langchain, Gemini AI, and Retrieval-Augmented Generation (RAG)
-🔹 Secure international clients and establish his presence in the software industry
