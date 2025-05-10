@@ -2,6 +2,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 from PIL import Image
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_google_genai import GoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -69,7 +70,7 @@ if not gemini_api_key:
 # Initialize chain once
 @st.cache_resource
 def initialize_chain():
-    llm = GoogleGenerativeAI(api_key=gemini_api_key, model="gemini-2.0-flash")
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro",google_api_key=gemini_api_key)
     loader = TextLoader(r"/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/bio.txt")
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
