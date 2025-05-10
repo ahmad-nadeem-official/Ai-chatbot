@@ -46,7 +46,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-image_path = "/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/src/alfred.png"
+image_path = "src/alfred.png"
 image = Image.open(image_path)
 
 # Use columns to display content in the same line
