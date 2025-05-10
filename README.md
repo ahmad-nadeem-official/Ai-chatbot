@@ -83,22 +83,12 @@ This project integrates with **Streamlit** to provide a beautiful and intuitive 
 ----------------
 
 1.  **Clone this repository**:
-    
-
-bash
-
-CopyEdit
 
 `git clone https://github.com/yourusername/alfred-chatbot.git
 cd alfred-chatbot` 
 
 2.  **Install the required dependencies**:
     
-
-bash
-
-CopyEdit
-
 `pip install -r requirements.txt` 
 
 3.  **Set up your environment variables**:
@@ -108,19 +98,10 @@ CopyEdit
     *   Add your **Google Gemini API key** to the `.env` file:
         
 
-bash
-
-CopyEdit
-
 `GOOGLE_API_KEY=your_api_key_here` 
 
 4.  **Run the application**:
     
-
-bash
-
-CopyEdit
-
 `streamlit run app.py` 
 
 * * *
@@ -144,11 +125,8 @@ CopyEdit
 **File Structure**
 ------------------
 
-bash
-
-CopyEdit
-
-`├── app.py                  # Main Streamlit application script
+`
+├── app.py                  # Main Streamlit application script
 ├── requirements.txt        # Python dependencies
 ├── .env                    # Store sensitive API keys (Google API)
 ├── bio.txt                 # Example document used for AI training
