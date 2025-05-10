@@ -7,7 +7,8 @@ Welcome to **Alfred**, your personalized, AI-powered assistant built with cuttin
 
 ### **Demo**
 
-[Watch the demo](#) (link to a demo video or hosted version)
+[cinnamon-2025-05-10T130926+0500.webm](https://github.com/user-attachments/assets/959bfddf-cae4-42dc-a886-c202e06be511)
+
 
 * * *
 
