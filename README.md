@@ -70,7 +70,7 @@ This project integrates with **Streamlit** to provide a beautiful and intuitive 
     
 *   **[FAISS](https://github.com/facebookresearch/faiss)** - For efficient similarity search, powering document retrieval.
     
-*   **Python** - The primary language used in the project.
+*   ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white) - The primary language used in the project.
     
 *   **[Pillow](https://pillow.readthedocs.io/en/stable/)** - Image handling.
     
