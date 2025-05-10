@@ -8,10 +8,8 @@ from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
 import os
 
-
-load_dotenv("api.env")
-gemini_api_key = os.getenv("api_key")
-llm = GoogleGenerativeAI(api_key=gemini_api_key, model="gemini-2.0-flash")
+gemini_api_key = "AIzaSyC4t-sTip43k6Wqk8riQESCaeRPfiMyDgE"
+llm = GoogleGenerativeAI(api_key='AIzaSyC4t-sTip43k6Wqk8riQESCaeRPfiMyDgE', model="gemini-2.0-flash")
 
 loader = TextLoader(r'/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/bio.txt')
 docs = loader.load()
