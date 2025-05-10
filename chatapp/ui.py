@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 from dotenv import load_dotenv
 import os
 from PIL import Image
@@ -113,6 +114,9 @@ with st.form("chat_input_form", clear_on_submit=True):
 
 if submitted and user_input:
     st.session_state.chat_history.append(("You", user_input))
+    
+    time.sleep(1.5)  # Optional: adjust sleep duration (e.g., 1.5 seconds)
+    
     result = qa_chain({"question": user_input})
     ai_response = result["answer"]
     st.session_state.chat_history.append(("Alfred", ai_response))
