@@ -1,5 +1,6 @@
+streamlit>=1.30.0
+pillow
 langchain==0.0.176
-python-dotenv==0.21.0
+python-dotenv
 faiss-cpu
 langchain-google-genai
-Pillow==9.2.0
