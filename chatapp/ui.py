@@ -71,7 +71,7 @@ if not gemini_api_key:
 @st.cache_resource
 def initialize_chain():
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro",google_api_key=gemini_api_key)
-    loader = TextLoader(r"/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/bio.txt")
+    loader = TextLoader(r"bio.txt")
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     split_docs = splitter.split_documents(docs)
