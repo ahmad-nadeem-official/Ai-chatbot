@@ -48,7 +48,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-image_path = "src/alfred.png"
+image_path = "chatapp/src/alfred.png"
 
 
 # Use columns to display content in the same line
