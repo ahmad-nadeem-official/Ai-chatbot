@@ -47,13 +47,13 @@ st.markdown("""
 
 
 image_path = "src/alfred.png"
-image = Image.open(image_path)
+# image = Image.open(image_path)
 
 # Use columns to display content in the same line
 col1, col2 = st.columns([1, 2])  # Adjust the width ratio if needed
 
 with col1:
-    st.image(image, width=250)
+    st.image(image_path, width=250)
 
 with col2:
     st.markdown("<h1 style='text-align: left; font-size: 36px;'>Hi, I'm Alfred</h1>", unsafe_allow_html=True)
