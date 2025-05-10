@@ -62,19 +62,20 @@ This project integrates with **Streamlit** to provide a beautiful and intuitive 
 **Technologies Used**
 ---------------------
 
-*   **Google Gemini** - Generative AI model to power responses.
+*   ![Google Gemini](https://img.shields.io/badge/Google_Gemini-Generative_AI_model_to_power_responses-0C9C45?logo=google&logoColor=white) - Generative AI model to power responses.
     
-*   **[LangChain](https://www.langchain.com/)** - Framework for document-based AI applications and conversational retrieval chains.
+*   **![LangChain](https://img.shields.io/badge/LangChain-Framework_for_document_based_AI_applications_and_conversational_retrieval_chains-2C2C2C?logo=python&logoColor=white) - Framework for document-based AI applications and conversational retrieval chains.
     
-*   **[Streamlit](https://streamlit.io/)** - Web app framework for creating and deploying interactive applications.
+*   ![Streamlit](https://img.shields.io/badge/Streamlit-Web_app_framework_for_creating_and_deploying_interactive_applications-FF4B4B?logo=streamlit&logoColor=white)
+ - Web app framework for creating and deploying interactive applications.
     
-*   **[FAISS](https://github.com/facebookresearch/faiss)** - For efficient similarity search, powering document retrieval.
+*   ![FAISS](https://img.shields.io/badge/FAISS-For_efficient_similarity_search_powering_document_retrieval-000000?logo=facebook&logoColor=white) - For efficient similarity search, powering document retrieval.
     
 *   ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white) - The primary language used in the project.
     
-*   **[Pillow](https://pillow.readthedocs.io/en/stable/)** - Image handling.
+*   ![Pillow](https://img.shields.io/badge/Pillow-Image_handling-F1C232?logo=pillow&logoColor=white) - Image handling.
     
-*   **[Dotenv](https://pypi.org/project/python-dotenv/)** - For loading environment variables securely.
+*   ![Dotenv](https://img.shields.io/badge/Dotenv-For_loading_environment_variables_securely-376B7D?logo=python&logoColor=white) - For loading environment variables securely.
     
 
 * * *
