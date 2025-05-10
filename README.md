@@ -1,137 +1,165 @@
-RAG-Based Chatbot using Gemini and FAISS
-========================================
+**Alfred - AI Chatbot Powered by LangChain and Google Gemini**
+==============================================================
 
-Overview
---------
+Welcome to **Alfred**, your personalized, AI-powered assistant built with cutting-edge technologies like **LangChain**, **Google Gemini**, and **Streamlit**! Alfred is designed to engage in natural conversations, offering a seamless and intelligent chat experience, all while being easy to integrate and extend.
 
-This project implements a **Retrieval-Augmented Generation (RAG) chatbot** using **Google Gemini**, **FAISS**, and **LangChain**. The chatbot loads a text document, splits it into chunks, embeds it using Google Generative AI embeddings, and retrieves relevant information for conversational responses.
+* * *
 
-Features
---------
+### **Demo**
 
-*   Uses **Gemini-2.0 Flash** for generating responses.
+[Watch the demo](#) (link to a demo video or hosted version)
+
+* * *
+
+### **Table of Contents**
+
+*   [Project Overview](#project-overview)
     
-*   Implements **Conversational Memory** to maintain chat history.
+*   [Features](#features)
     
-*   Loads and processes documents using **TextLoader** and **RecursiveCharacterTextSplitter**.
+*   [Technologies Used](#technologies-used)
     
-*   Uses **FAISS** for efficient document retrieval.
+*   [Installation](#installation)
     
-*   Supports an interactive chat interface.
+*   [Usage](#usage)
+    
+*   [File Structure](#file-structure)
+    
+*   [License](#license)
     
 
-Requirements
+* * *
+
+**Project Overview**
+--------------------
+
+**Alfred** is a conversational AI chatbot developed to provide insightful, dynamic, and contextually aware responses. Built using **Google Gemini** (the next-gen generative AI model) and **LangChain** for document-based retrieval, Alfred is capable of responding intelligently to user queries. It can be customized for various use cases, from customer support to personal assistants.
+
+This project integrates with **Streamlit** to provide a beautiful and intuitive web interface, making it an accessible solution for businesses and developers looking to deploy AI chatbots with minimal setup.
+
+* * *
+
+**Features**
 ------------
 
-### Prerequisites
-
-Ensure you have Python installed (>=3.8) and install the required dependencies:
-
-    pip install langchain langchain_google_genai faiss-cpu python-dotenv
-
-Setup
------
-
-1.  **Create and configure your API key:**
+*   **AI-Powered Responses**: Leverages **Google Gemini** to generate contextually relevant, intelligent answers.
     
-    *   Sign up for **Google AI Studio** and obtain an API key.
+*   **Document Retrieval**: Uses **LangChain** to load documents and provide fact-based responses.
+    
+*   **User-Friendly UI**: Built with **Streamlit**, it’s interactive, responsive, and easy to use.
+    
+*   **Memory Management**: Retains conversation history to provide personalized, context-aware responses.
+    
+*   **Customizable**: Add your own documents to enhance its knowledge base.
+    
+*   **Real-Time Interaction**: Asks and answers questions instantly with real-time processing.
+    
+*   **Chat History**: Keeps track of ongoing conversation, making it more human-like.
+    
+
+* * *
+
+**Technologies Used**
+---------------------
+
+*   **Google Gemini** - Generative AI model to power responses.
+    
+*   **[LangChain](https://www.langchain.com/)** - Framework for document-based AI applications and conversational retrieval chains.
+    
+*   **[Streamlit](https://streamlit.io/)** - Web app framework for creating and deploying interactive applications.
+    
+*   **[FAISS](https://github.com/facebookresearch/faiss)** - For efficient similarity search, powering document retrieval.
+    
+*   **Python** - The primary language used in the project.
+    
+*   **[Pillow](https://pillow.readthedocs.io/en/stable/)** - Image handling.
+    
+*   **[Dotenv](https://pypi.org/project/python-dotenv/)** - For loading environment variables securely.
+    
+
+* * *
+
+**Installation**
+----------------
+
+1.  **Clone this repository**:
+    
+
+bash
+
+CopyEdit
+
+`git clone https://github.com/yourusername/alfred-chatbot.git
+cd alfred-chatbot` 
+
+2.  **Install the required dependencies**:
+    
+
+bash
+
+CopyEdit
+
+`pip install -r requirements.txt` 
+
+3.  **Set up your environment variables**:
+    
+    *   Create a `.env` file in the root of the project.
         
-    *   Create a file named `.env` (or `api.env` as used in the script) and add:
+    *   Add your **Google Gemini API key** to the `.env` file:
         
-            api_key=YOUR_GEMINI_API_KEY
-        
-2.  **Prepare your text file:**
-    
-    *   Store the document (e.g., `bio.txt`) in the same directory.
-        
-3.  **Run the chatbot:**
-    
-        python chatbot.py
-    
 
-Code Breakdown
---------------
+bash
 
-### 1\. **Load API Key**
+CopyEdit
 
-The script loads the API key from `api.env`:
+`GOOGLE_API_KEY=your_api_key_here` 
 
-    from dotenv import load_dotenv
-    import os
-    load_dotenv("api.env")
-    gemini_api_key = os.getenv("api_key")
-
-### 2\. **Initialize Language Model and Load Documents**
-
-    from langchain_google_genai import GoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-    from langchain.document_loaders import TextLoader
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
-    
-    llm = GoogleGenerativeAI(api_key=gemini_api_key, model="gemini-2.0-flash")
-    loader = TextLoader(r'bio.txt')
-    docs = loader.load()
-
-### 3\. **Split and Embed Documents**
-
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-    document = text_splitter.split_documents(docs)
-    
-    embedding = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001",
-        google_api_key=gemini_api_key
-    )
-    vectorstore = FAISS.from_documents(document, embedding)
-
-### 4\. **Setup Conversational Memory and Chain**
-
-    from langchain.memory import ConversationBufferMemory
-    from langchain.chains import ConversationalRetrievalChain
-    
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    qa = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), memory=memory)
-
-### 5\. **Chat Function**
-
-    def chat():
-        print("AI is running...")
-        while True:
-            query = input("Please enter: ")
-            if query.lower() == "quit":
-                break
-            result = qa({"question": query})
-            print(result["answer"])
-    
-    chat()
-
-Usage
------
-
-*   **Start the chatbot** and ask questions based on the document.
-    
-*   **Type** `**quit**` **to exit the chat.**
+4.  **Run the application**:
     
 
-Troubleshooting
----------------
+bash
 
-*   Ensure your **API key is valid**.
+CopyEdit
+
+`streamlit run app.py` 
+
+* * *
+
+**Usage**
+---------
+
+1.  Upon running the app, you will be greeted with a friendly **chat interface** powered by **Alfred**.
     
-*   If you see authentication errors, confirm `.env` is properly set and installed using `pip install python-dotenv`.
+2.  Start a conversation by typing your questions in the input field.
     
-*   If **no relevant responses**, check if `bio.txt` contains meaningful content.
+3.  Alfred will process your request, retrieve relevant data, and provide an answer in real-time.
+    
+4.  The chat history is displayed on the right side for context and continuity.
+    
+5.  Customize **Alfred** by adding your own documents in the code to provide domain-specific knowledge.
     
 
-Future Enhancements
--------------------
+* * *
 
-*   Improve retrieval with better chunking strategies.
-    
-*   Implement multi-document support.
-    
-*   Deploy the chatbot using a web interface.
-    
+**File Structure**
+------------------
 
-License
--------
+bash
 
-This project is open-source under the **MIT License**.
+CopyEdit
+
+`├── app.py                  # Main Streamlit application script
+├── requirements.txt        # Python dependencies
+├── .env                    # Store sensitive API keys (Google API)
+├── bio.txt                 # Example document used for AI training
+├── src/                    # Source images and assets
+│   └── alfred.png          # Image for the app's header
+├── README.md               # Project documentation
+└── ...                     # Other necessary files` 
+
+* * *
+
+**License**
+-----------
+
+This project is licensed under the **MIT License** - see the LICENSE file for details.
