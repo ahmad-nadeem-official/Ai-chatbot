@@ -70,7 +70,7 @@ if not gemini_api_key:
 # Initialize chain once
 @st.cache_resource
 def initialize_chain():
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro",google_api_key=gemini_api_key)
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-8b",google_api_key=gemini_api_key)
     loader = TextLoader(r"bio.txt")
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
