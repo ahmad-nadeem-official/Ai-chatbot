@@ -45,8 +45,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-image_path = "/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/src/alfred.png"
-image = Image.open(image_path)
 
 image_path = "/home/muhammad-ahmad-nadeem/Projects/Ai-chatbot/chatapp/src/alfred.png"
 image = Image.open(image_path)
