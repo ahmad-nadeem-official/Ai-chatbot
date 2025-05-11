@@ -77,10 +77,9 @@ def initialize_chain():
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     split_docs = splitter.split_documents(docs)
-
-    # embeddings = GoogleGenerativeAIEmbeddings(
-    #     model="models/embedding-001", google_api_key=gemini_api_key
-    # )
+    embeddings = GoogleGenerativeAIEmbeddings(
+        model="models/embedding-001", google_api_key=gemini_api_key
+    )
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vectorstore = FAISS.from_documents(split_docs, embeddings)
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
