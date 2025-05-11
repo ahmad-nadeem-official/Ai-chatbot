@@ -72,7 +72,7 @@ if not gemini_api_key:
 # Initialize chain once
 @st.cache_resource
 def initialize_chain():
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-8b",google_api_key=gemini_api_key)
+    llm = GoogleGenerativeAI(model="gemini-1.5-flash-8b",google_api_key=gemini_api_key)
     loader = TextLoader(os.path.join("chatapp", "bio.txt"))
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
@@ -80,7 +80,7 @@ def initialize_chain():
     embeddings = GoogleGenerativeAIEmbeddings(
         model="models/embedding-001", google_api_key=gemini_api_key
     )
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vectorstore = FAISS.from_documents(split_docs, embeddings)
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
