@@ -4,3 +4,4 @@ langchain==0.0.176
 python-dotenv
 faiss-cpu
 langchain-google-genai
+sentence-transformers
